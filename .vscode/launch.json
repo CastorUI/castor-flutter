@@ -2,11 +2,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Flutter Web: example/main.dart",
+      "name": "Flutter Web: example/lib/main.dart",
       "request": "launch",
       "type": "dart",
       "flutterMode": "debug",
-      "program": "main.dart",         // 注意：此处不需要 example/ 前缀
+      "program": "lib/main.dart",         // 注意：此处不需要 example/ 前缀
       "cwd": "example",               // 关键：设置工作目录为 example/
       "deviceId": "chrome"
     }
