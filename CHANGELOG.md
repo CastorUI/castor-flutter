@@ -1,6 +1,6 @@
 # castor_flutter changelog
 
-## 0.0.1
+## 1.0.1
 
 ### 新增常用表单组件
 
