@@ -37,6 +37,15 @@ CastorButton(label: 'Click', onPressed: () {});
 // Use an input
 CastorInput(label: 'Enter text');
 
+// Use a labeled input form field
+LabelInputFormField(
+  label: 'Username',
+  initialValue: '',
+  saveHandler: (val) {
+    // handle value
+  },
+);
+
 // Use a utility class
 final result = Calculator().addOne(2);
 ```

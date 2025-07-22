@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'button_demo_page.dart';
 import 'input_demo_page.dart';
+import 'label_input_form_field_demo_page.dart';
 
 class UIIndexPage extends StatelessWidget {
   const UIIndexPage({super.key});
@@ -24,6 +25,15 @@ class UIIndexPage extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const InputDemoPage()),
+            );
+          },
+        ),
+        ListTile(
+          leading: const Icon(Icons.label),
+          title: const Text('Label Input Form Field'),
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const LabelInputFormFieldDemoPage()),
             );
           },
         ),
