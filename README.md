@@ -46,6 +46,16 @@ LabelInputFormField(
   },
 );
 
+// Use a labeled select form field
+LabelSelectFormField(
+  label: 'Fruit',
+  initialValue: 1,
+  options: {1: 'Apple', 2: 'Banana', 3: 'Orange'},
+  saveHandler: (val) {
+    // handle value
+  },
+);
+
 // Use a utility class
 final result = Calculator().addOne(2);
 ```
