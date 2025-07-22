@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   castor_flutter:
     path: ../
+  dio: ^5.7.0
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_lints: ^3.0.0

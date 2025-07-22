@@ -20,8 +20,8 @@ void main() {
     );
     expect(find.text('Test Label'), findsOneWidget);
     expect(find.text('init'), findsOneWidget);
-    await tester.enterText(find.byType(TextFormField), 'new value');
+    await tester.enterText(find.byType(TextFormField), 'newvalue');
     // onChanged and onSaved both call saveHandler
-    expect(savedValue, 'new value');
+    expect(savedValue, 'newvalue');
   });
 } 

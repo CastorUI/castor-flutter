@@ -75,6 +75,16 @@ LabelMultilineInputFormField(
   maxLines: 4,
 );
 
+// Use a labeled single image form field
+LabelSingleImageFormField(
+  label: 'Avatar',
+  initialValue: 'https://example.com/avatar.png',
+  saveHandler: (val) {
+    // handle value
+  },
+  uploadHandler: (file) async => 'https://example.com/avatar.png',
+);
+
 // Use a utility class
 final result = Calculator().addOne(2);
 ```

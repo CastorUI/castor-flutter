@@ -20,7 +20,7 @@ void main() {
     );
     expect(find.text('Description'), findsOneWidget);
     expect(find.text('init'), findsOneWidget);
-    await tester.enterText(find.byType(TextFormField), 'new multiline value');
-    expect(savedValue, 'new multiline value');
+    await tester.enterText(find.byType(TextFormField), 'newmultilinevalue');
+    expect(savedValue, 'newmultilinevalue');
   });
 } 
