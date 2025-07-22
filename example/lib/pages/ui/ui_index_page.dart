@@ -6,6 +6,7 @@ import 'label_select_form_field_demo_page.dart';
 import 'label_switch_form_field_demo_page.dart';
 import 'label_multiline_input_form_field_demo_page.dart';
 import 'label_single_image_form_field_demo_page.dart';
+import 'label_multi_images_form_field_demo_page.dart';
 
 class UIIndexPage extends StatelessWidget {
   const UIIndexPage({super.key});
@@ -74,6 +75,15 @@ class UIIndexPage extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const LabelSingleImageFormFieldDemoPage()),
+            );
+          },
+        ),
+        ListTile(
+          leading: const Icon(Icons.collections),
+          title: const Text('Label Multi Images Form Field'),
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const LabelMultiImagesFormFieldDemoPage()),
             );
           },
         ),

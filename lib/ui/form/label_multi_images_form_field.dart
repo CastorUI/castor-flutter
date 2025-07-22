@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:castor_flutter/ui/utils/style.dart';
 
@@ -13,6 +14,9 @@ class LabelMultiImagesFormField extends StatelessWidget {
   /// 保存
   final Function? saveHandler;
 
+  /// 上传
+  final Future<String?> Function(MultipartFile)? uploadHandler;
+
   /// 是否可用,默认true
   final bool? enabled;
 
@@ -24,6 +28,7 @@ class LabelMultiImagesFormField extends StatelessWidget {
     this.label,
     this.initialValue,
     this.saveHandler,
+    this.uploadHandler,
     this.enabled = true,
     this.allowEmpty = true,
   });
@@ -59,6 +64,7 @@ class LabelMultiImagesFormField extends StatelessWidget {
                 initialValue ?? <String>[],
                 imageEnabled,
                 saveHandler: saveHandler,
+                uploadHandler: uploadHandler,
               ),
             )
           ],

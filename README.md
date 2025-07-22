@@ -85,6 +85,18 @@ LabelSingleImageFormField(
   uploadHandler: (file) async => 'https://example.com/avatar.png',
 );
 
+// Use a labeled multi images form field
+LabelMultiImagesFormField(
+  label: 'Gallery',
+  initialValue: [
+    'https://via.placeholder.com/80?text=1',
+    'https://via.placeholder.com/80?text=2',
+  ],
+  saveHandler: (val) {
+    // handle value
+  },
+);
+
 // Use a utility class
 final result = Calculator().addOne(2);
 ```
