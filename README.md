@@ -41,6 +41,10 @@ CastorInput(label: 'Enter text');
 final result = Calculator().addOne(2);
 ```
 
+## Live Demo
+
+The project has been deployed. Experience it online here: [castor_flutter Component Library Demo](https://castorui.github.io/castor-flutter-help/)
+
 ## Example app
 
 This package provides a full-featured example app under the `example/` directory.

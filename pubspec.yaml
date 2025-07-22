@@ -1,7 +1,7 @@
 name: castor_flutter
 description: "A new Flutter package project."
 version: 0.0.1
-homepage:
+homepage: https://castorui.github.io/castor-flutter-help/
 
 environment:
   sdk: ^3.6.2
