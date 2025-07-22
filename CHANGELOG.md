@@ -1,3 +1,12 @@
+# castor_flutter changelog
+
 ## 0.0.1
 
-* TODO: Describe initial release.
+### 新增常用表单组件
+
+1. 单行输入框
+2. 多行输入框
+3. 下拉框
+4. 开关
+5. 单张图片
+6. 图片列表

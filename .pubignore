@@ -1,0 +1,14 @@
+# 忽略测试文件
+/test/
+
+# 忽略示例代码（如果不需要发布）
+/example/
+
+# 忽略示例文档
+/castor-flutter-help/
+
+# 忽略构建产物
+/build/
+
+# 忽略 IDE 配置文件
+castor_flutter.iml
