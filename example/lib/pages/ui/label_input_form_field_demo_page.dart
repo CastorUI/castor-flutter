@@ -16,7 +16,7 @@ class _LabelInputFormFieldDemoPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('按钮 Button 示例')),
+        appBar: AppBar(title: const Text('Label Input Form Field Demo')),
         body: Center(
             child: Padding(
           padding: const EdgeInsets.all(24.0),
