@@ -56,6 +56,15 @@ LabelSelectFormField(
   },
 );
 
+// Use a labeled switch form field
+LabelSwitchFormField(
+  label: 'Enable feature',
+  initialValue: TupleEntity(true, 'On'),
+  saveHandler: (val) {
+    // handle value
+  },
+);
+
 // Use a utility class
 final result = Calculator().addOne(2);
 ```
