@@ -65,6 +65,16 @@ LabelSwitchFormField(
   },
 );
 
+// Use a labeled multiline input form field
+LabelMultilineInputFormField(
+  label: 'Description',
+  initialValue: '',
+  saveHandler: (val) {
+    // handle value
+  },
+  maxLines: 4,
+);
+
 // Use a utility class
 final result = Calculator().addOne(2);
 ```

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:castor_flutter/ui/utils/style.dart';
 
-class LableMultilineInputFormField extends StatelessWidget {
+class LabelMultilineInputFormField extends StatelessWidget {
   /// 标签
   final String label;
 
@@ -26,7 +26,7 @@ class LableMultilineInputFormField extends StatelessWidget {
   /// 是否允许为空,默认true
   final bool allowEmpty;
 
-  const LableMultilineInputFormField(
+  const LabelMultilineInputFormField(
       {super.key,
       required this.label,
       required this.saveHandler,
@@ -78,7 +78,12 @@ class LableMultilineInputFormField extends StatelessWidget {
                 initialValue: initialValue,
                 validator: validator as FormFieldValidator<String>?,
                 autovalidateMode: AutovalidateMode.always,
-                onSaved:  (value) {
+                onSaved: (value) {
+                  if (saveHandler != null) {
+                    saveHandler!(value);
+                  }
+                },
+                onChanged: (value) {
                   if (saveHandler != null) {
                     saveHandler!(value);
                   }
