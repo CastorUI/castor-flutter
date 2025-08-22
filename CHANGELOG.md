@@ -2,7 +2,8 @@
 
 ## 1.0.2
 
-- 修复：在 `pubspec.yaml` 中添加缺失的依赖 `intl`（用于 l10n 生成代码中的 `DateFormat` 等）。
+- 新增：支持国际化（i18n），内置英文（en）与中文（zh）本地化资源与文案。
+- 修复：在 `pubspec.yaml` 中添加 `intl` 依赖，确保生成的本地化代码（如 `DateFormat`）可用。
 
 ## 1.0.1
 
