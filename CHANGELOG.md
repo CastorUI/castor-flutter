@@ -1,5 +1,9 @@
 # castor_flutter changelog
 
+## 1.0.2
+
+- 修复：在 `pubspec.yaml` 中添加缺失的依赖 `intl`（用于 l10n 生成代码中的 `DateFormat` 等）。
+
 ## 1.0.1
 
 ### 新增常用表单组件
