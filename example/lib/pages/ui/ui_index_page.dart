@@ -1,4 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import 'package:castor_flutter_example/widgets/web_wrapper.dart';
 import 'label_input_form_field_demo_page.dart';
 import 'label_select_form_field_demo_page.dart';
 import 'label_switch_form_field_demo_page.dart';
@@ -18,7 +21,10 @@ class UIIndexPage extends StatelessWidget {
           title: const Text('Label Input Form Field'),
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const LabelInputFormFieldDemoPage()),
+              MaterialPageRoute(
+                  builder: (_) => kIsWeb
+                      ? const WebWrapper(child: LabelInputFormFieldDemoPage())
+                      : const LabelInputFormFieldDemoPage()),
             );
           },
         ),
@@ -27,7 +33,10 @@ class UIIndexPage extends StatelessWidget {
           title: const Text('Label Select Form Field'),
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const LabelSelectFormFieldDemoPage()),
+              MaterialPageRoute(
+                  builder: (_) => kIsWeb
+                      ? const WebWrapper(child: LabelSelectFormFieldDemoPage())
+                      : const LabelSelectFormFieldDemoPage()),
             );
           },
         ),
@@ -36,7 +45,10 @@ class UIIndexPage extends StatelessWidget {
           title: const Text('Label Switch Form Field'),
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const LabelSwitchFormFieldDemoPage()),
+              MaterialPageRoute(
+                  builder: (_) => kIsWeb
+                      ? const WebWrapper(child: LabelSwitchFormFieldDemoPage())
+                      : const LabelSwitchFormFieldDemoPage()),
             );
           },
         ),
@@ -45,7 +57,11 @@ class UIIndexPage extends StatelessWidget {
           title: const Text('Label Multiline Input Form Field'),
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const LabelMultilineInputFormFieldDemoPage()),
+              MaterialPageRoute(
+                  builder: (_) => kIsWeb
+                      ? const WebWrapper(
+                          child: LabelMultilineInputFormFieldDemoPage())
+                      : const LabelMultilineInputFormFieldDemoPage()),
             );
           },
         ),
@@ -54,7 +70,11 @@ class UIIndexPage extends StatelessWidget {
           title: const Text('Label Single Image Form Field'),
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const LabelSingleImageFormFieldDemoPage()),
+              MaterialPageRoute(
+                  builder: (_) => kIsWeb
+                      ? const WebWrapper(
+                          child: LabelSingleImageFormFieldDemoPage())
+                      : const LabelSingleImageFormFieldDemoPage()),
             );
           },
         ),
@@ -63,7 +83,11 @@ class UIIndexPage extends StatelessWidget {
           title: const Text('Label Multi Images Form Field'),
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const LabelMultiImagesFormFieldDemoPage()),
+              MaterialPageRoute(
+                  builder: (_) => kIsWeb
+                      ? const WebWrapper(
+                          child: LabelMultiImagesFormFieldDemoPage())
+                      : const LabelMultiImagesFormFieldDemoPage()),
             );
           },
         ),
@@ -71,4 +95,4 @@ class UIIndexPage extends StatelessWidget {
       ],
     );
   }
-} 
+}

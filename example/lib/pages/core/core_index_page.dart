@@ -1,4 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import 'package:castor_flutter_example/widgets/web_wrapper.dart';
 import 'calculator_demo_page.dart';
 
 class CoreIndexPage extends StatelessWidget {
@@ -13,7 +16,10 @@ class CoreIndexPage extends StatelessWidget {
           title: const Text('Calculator 示例'),
           onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const CalculatorDemoPage()),
+              MaterialPageRoute(
+                  builder: (_) => kIsWeb
+                      ? const WebWrapper(child: CalculatorDemoPage())
+                      : const CalculatorDemoPage()),
             );
           },
         ),
