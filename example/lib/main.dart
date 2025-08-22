@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'pages/ui/ui_index_page.dart';
 import 'pages/core/core_index_page.dart';
+import 'package:castor_flutter/l10n/l10n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +18,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: const Locale('en'),
       home: const ExampleHomePage(),
     );
   }

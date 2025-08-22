@@ -13,6 +13,9 @@ dependencies:
     path: ../
   dio: ^5.7.0
   image_picker: ^1.1.2
+  flutter_localizations:
+    sdk: flutter
+  intl: any # Use the pinned version from flutter_localizations
 
 dev_dependencies:
   flutter_lints: ^3.0.0
