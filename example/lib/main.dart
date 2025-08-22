@@ -34,6 +34,16 @@ class _MyAppState extends State<MyApp> {
         title: 'castor_flutter Example',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          // 统一页面切换效果：采用垂直向上滑入（上下切换）
+          pageTransitionsTheme: const PageTransitionsTheme(
+            builders: <TargetPlatform, PageTransitionsBuilder>{
+              TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+              TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+              TargetPlatform.linux: FadeUpwardsPageTransitionsBuilder(),
+              TargetPlatform.macOS: FadeUpwardsPageTransitionsBuilder(),
+              TargetPlatform.windows: FadeUpwardsPageTransitionsBuilder(),
+            },
+          ),
         ),
         locale: _locale,
         localizationsDelegates: const [
