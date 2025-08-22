@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:castor_flutter/ui/utils/constants.dart';
 import 'package:castor_flutter/ui/utils/file.dart';
 import 'package:castor_flutter/ui/widgets/toast.dart';
+import 'package:castor_flutter/l10n/l10n.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
@@ -38,9 +39,10 @@ class _SingleImageState extends State<SingleImage> {
     _imageUrl = widget.defaultImageUrl;
   }
 
-  /// 处理图片选择后的逻辑，包括格式校验、转换为 MultipartFile、回调 uploadHandler、展示图片或弹出格式错误提示。
-  /// [pickedFile] 选择的图片文件。
-  /// [usePath] 是否用 path 进行格式校验（拍照用 path，图库用 name）。
+  /// Handle the picked image: validate format, convert to MultipartFile,
+  /// call uploadHandler, update image or show format error.
+  /// [pickedFile] The selected image file.
+  /// [usePath] Whether to validate using path (camera) or name (gallery).
   Future<void> _handlePickedFile(XFile? pickedFile,
       {required bool usePath}) async {
     if (pickedFile != null) {
@@ -61,13 +63,13 @@ class _SingleImageState extends State<SingleImage> {
         }
       } else {
         if (mounted) {
-          toastWarning(context, "无效的图片格式!");
+          toastWarning(context, AppLocalizations.of(context).invalidImageFormat);
         }
       }
     }
   }
 
-  /// 调用相机拍照并处理图片。
+  /// Take photo by camera and handle image.
   Future _getCamera() async {
     Navigator.of(context).pop();
     final XFile? pickedFile =
@@ -75,7 +77,7 @@ class _SingleImageState extends State<SingleImage> {
     await _handlePickedFile(pickedFile, usePath: true);
   }
 
-  /// 从相册选择图片并处理。
+  /// Pick image from gallery and handle image.
   Future _getImage() async {
     Navigator.of(context).pop();
     final XFile? pickedFile =
@@ -84,7 +86,7 @@ class _SingleImageState extends State<SingleImage> {
   }
 
   Future _getActionSheet() async {
-    // 点击时让当前焦点所在的文本框失焦，隐藏键盘
+  // Unfocus current text field to hide keyboard
     FocusScope.of(context).requestFocus(FocusNode());
     await showModalBottomSheet(
         context: context,
@@ -96,13 +98,13 @@ class _SingleImageState extends State<SingleImage> {
                     onTap: _getCamera,
                     child: ListTile(
                       leading: Icon(Icons.photo_camera),
-                      title: Text("拍照"),
+                      title: Text(AppLocalizations.of(context).camera),
                     )),
                 InkWell(
                     onTap: _getImage,
                     child: ListTile(
                       leading: Icon(Icons.photo),
-                      title: Text("相册"),
+                      title: Text(AppLocalizations.of(context).gallery),
                     )),
               ],
             ),

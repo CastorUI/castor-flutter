@@ -101,6 +101,53 @@ LabelMultiImagesFormField(
 final result = Calculator().addOne(2);
 ```
 
+## Internationalization (i18n)
+
+This library supports Chinese and English via Flutter's gen_l10n (intl/ARB) workflow.
+
+### Setup in your app
+
+1) Add Flutter localization delegates and supported locales to your MaterialApp:
+
+```dart
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:castor_flutter/castor_flutter.dart'; // exports AppLocalizations
+
+MaterialApp(
+  // ...existing code...
+  localizationsDelegates: const [
+    AppLocalizations.delegate,
+    GlobalMaterialLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+  ],
+  supportedLocales: AppLocalizations.supportedLocales,
+  // Optional: Force a locale
+  // locale: const Locale('zh'),
+);
+```
+
+2) Components use localized strings automatically via `AppLocalizations.of(context)`.
+
+### Add or modify translations
+
+- Edit the ARB files in `lib/l10n/`:
+  - `app_en.arb` (English)
+  - `app_zh.arb` (Chinese)
+- Then generate localizations:
+
+```sh
+flutter gen-l10n
+```
+
+Generated files are placed in `lib/l10n/generated/`.
+
+### Notes
+
+- The package exports `AppLocalizations` via `l10n/l10n.dart`, so you only need `import 'package:castor_flutter/castor_flutter.dart';`.
+- If you add new keys to ARB, re-run `flutter gen-l10n` before building/running.
+- The components currently use keys like: `pleaseEnter`, `none`, `noData`, `pleaseSelect`, `camera`, `gallery`, `invalidImageFormat`, and `unsupportedImagesSkipped(count)`.
+
 ## Live Demo
 
 The project has been deployed. Experience it online here: [castor_flutter Component Library Demo](https://castorui.github.io/castor-flutter-help/)

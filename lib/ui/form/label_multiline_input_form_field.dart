@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:castor_flutter/ui/utils/style.dart';
+import 'package:castor_flutter/l10n/l10n.dart';
 
 class LabelMultilineInputFormField extends StatelessWidget {
-  /// 标签
+  /// Field label
   final String label;
 
-  /// 值
+  /// Initial value
   final String? initialValue;
 
-  /// 校验
+  /// Validator
   final Function? validator;
 
-  /// 保存
+  /// Save handler
   final Function? saveHandler;
 
-  /// 显示行数
+  /// Max display lines
   final int maxLines;
 
   final String trailingText;
 
-  /// 是否可用,默认true
+  /// Whether enabled, default true
   final bool enabled;
 
-  /// 是否允许为空,默认true
+  /// Whether allow empty, default true
   final bool allowEmpty;
 
   const LabelMultilineInputFormField(
@@ -65,15 +66,17 @@ class LabelMultilineInputFormField extends StatelessWidget {
                 style: AppTextStyle.formText,
                 maxLines: maxLines,
                 decoration: InputDecoration(
-                    hintText: enabled ? '请输入' : '暂无数据',
+          hintText: enabled
+            ? AppLocalizations.of(context).pleaseEnter
+            : AppLocalizations.of(context).noData,
                     hintStyle: AppTextStyle.formLightGrayText,
                     border: const OutlineInputBorder(
                         borderSide: BorderSide(
                             color: Color.fromRGBO(230, 230, 230, 1)))),
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(RegExp(
-                      "[\\a-\\z\\A-\\Z0-9\\u4E00-\\u9FA5\\.\\,\\?\\<\\>\\。\\，\\-\\——\\=\\;\\！\\!\\+]")), //只能输入汉字或者字母或数字
-                  LengthLimitingTextInputFormatter(50), //最大长度
+                      "[\\a-\\z\\A-\\Z0-9\\u4E00-\\u9FA5\\.\\,\\?\\<\\>\\。\\，\\-\\——\\=\\;\\！\\!\\+]")), // Allow Chinese characters, letters, numbers and common punctuations
+                  LengthLimitingTextInputFormatter(50), // Max length
                 ],
                 initialValue: initialValue,
                 validator: validator as FormFieldValidator<String>?,

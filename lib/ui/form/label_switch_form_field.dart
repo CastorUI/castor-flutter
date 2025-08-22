@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:castor_flutter/ui/utils/style.dart';
 
 class LabelSwitchFormField extends StatelessWidget {
-  /// 标签
+  /// Field label
   final String? label;
 
-  /// 值
+  /// Initial value
   final TupleEntity<bool, String>? initialValue;
 
-  /// 保存
+  /// Save handler
   final Function? saveHandler;
 
-  /// 是否可用,默认true
+  /// Whether enabled, default true
   final bool enabled;
 
   const LabelSwitchFormField(

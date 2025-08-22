@@ -1,0 +1,15 @@
+{
+  "@@locale": "en",
+  "pleaseEnter": "Please enter",
+  "none": "None",
+  "noData": "No data",
+  "pleaseSelect": "Please select",
+  "camera": "Camera",
+  "gallery": "Gallery",
+  "invalidImageFormat": "Invalid image format!",
+  "unsupportedImagesSkipped": "{count} image(s) are not supported and were skipped",
+  "@unsupportedImagesSkipped": {
+    "description": "Shown when some selected images are not supported.",
+    "placeholders": { "count": { "type": "int" } }
+  }
+}

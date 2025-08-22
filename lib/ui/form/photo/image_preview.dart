@@ -12,7 +12,7 @@ class ImagePreviewPage extends StatefulWidget {
 
 class _ImagePreviewPageState extends State<ImagePreviewPage> {
   PageController? _pageController;
-  int _initIndex = 0; //初始index
+  int _initIndex = 0; // initial index
   int _currentIndex = 0;
   List<String> _photoList = <String>[];
   Color _preivewBgColor = Colors.black;

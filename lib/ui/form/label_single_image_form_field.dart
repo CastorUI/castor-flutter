@@ -2,24 +2,25 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:castor_flutter/ui/utils/style.dart';
 import 'photo/single_image.dart';
+import 'package:castor_flutter/l10n/l10n.dart';
 
 class LabelSingleImageFormField extends StatelessWidget {
-  /// 标签
+  /// Field label
   final String? label;
 
-  /// 值
+  /// Initial value
   final String? initialValue;
 
-  /// 上传
+  /// Upload handler
   final Future<String?> Function(MultipartFile file)? uploadHandler;
 
-  /// 保存
+  /// Save handler
   final Function? saveHandler;
 
-  /// 是否可用,默认true
+  /// Whether enabled, default true
   final bool enabled;
 
-  /// 是否允许为空,默认true
+  /// Whether allow empty, default true
   final bool allowEmpty;
 
   final double avatarWidth;
@@ -57,7 +58,7 @@ class LabelSingleImageFormField extends StatelessWidget {
                                   style: AppTextStyle.formLabelRequired),
                             ),
                       Text(
-                        label ?? '暂无',
+                        label ?? AppLocalizations.of(context).none,
                         style: AppTextStyle.formLabel,
                       ),
                     ],

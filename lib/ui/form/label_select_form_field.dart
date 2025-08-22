@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:castor_flutter/ui/utils/style.dart';
+import 'package:castor_flutter/l10n/l10n.dart';
 
 import 'formFields/select_form_field.dart';
 
 class LabelSelectFormField extends StatelessWidget {
-  /// 标签
+  /// Field label
   final String label;
 
-  /// 值
+  /// Initial value
   final dynamic initialValue;
 
-  /// 数据源
+  /// Data source
   final Map<dynamic, String> options;
 
-  /// 校验
+  /// Validator
   final Function? validator;
 
-  /// 保存
+  /// Save handler
   final Function saveHandler;
 
-  /// 是否可用,默认true
+  /// Whether enabled, default true
   final bool enabled;
 
   const LabelSelectFormField(
@@ -67,7 +68,9 @@ class LabelSelectFormField extends StatelessWidget {
                           hint: Align(
                               alignment: Alignment.centerRight,
                               child: Text(
-                                enabled ? '请选择' : '',
+                                enabled
+                                    ? AppLocalizations.of(context).pleaseSelect
+                                    : '',
                                 style: AppTextStyle.formLightGrayText,
                               )),
                           decoration: const InputDecoration(

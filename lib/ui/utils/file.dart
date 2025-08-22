@@ -19,7 +19,7 @@ class FileUtil {
     }
   }
 
-  /// 将 XFile 转换为 MultipartFile，兼容 web 和非 web 平台。
+  /// Convert XFile to MultipartFile, compatible with web and non-web platforms.
   static Future<MultipartFile> xFileToMultipartFile(XFile pickedFile) async {
     if (kIsWeb) {
       final bytes = await pickedFile.readAsBytes();

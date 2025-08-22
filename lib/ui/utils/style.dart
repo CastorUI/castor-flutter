@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-// 文本样式
+// Text styles
 class AppTextStyle {
-  /// 表单字段标签
+    /// Form field label
   static const formLabel = TextStyle(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
@@ -11,7 +11,7 @@ class AppTextStyle {
   static const formLabelRequired =
       TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.red);
 
-  /// 表单字段文本
+    /// Form field text
   static const formText = TextStyle(
       fontSize: 14.0,
       fontWeight: FontWeight.w400,

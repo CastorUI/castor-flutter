@@ -1,0 +1,15 @@
+{
+  "@@locale": "zh",
+  "pleaseEnter": "请输入",
+  "none": "暂无",
+  "noData": "暂无数据",
+  "pleaseSelect": "请选择",
+  "camera": "拍照",
+  "gallery": "相册",
+  "invalidImageFormat": "无效的图片格式!",
+  "unsupportedImagesSkipped": "{count}张图片格式不支持,已跳过",
+  "@unsupportedImagesSkipped": {
+    "description": "当有图片不被支持时显示。",
+    "placeholders": { "count": { "type": "int" } }
+  }
+}

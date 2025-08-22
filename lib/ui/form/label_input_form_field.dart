@@ -1,27 +1,28 @@
 import 'package:castor_flutter/ui/utils/style.dart';
+import 'package:castor_flutter/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class LabelInputFormField extends StatelessWidget {
-  /// 标签
+  /// Field label
   final String? label;
 
-  /// 值
+  /// Initial value
   final String? initialValue;
 
-  /// 校验
+  /// Validator
   final Function? validator;
 
-  /// 保存
+  /// Save handler
   final Function? saveHandler;
 
-  /// 是否可用,默认true
+  /// Whether enabled, default true
   final bool enabled;
 
-  /// 是否自动获取焦点,默认false
+  /// Whether autofocus, default false
   final bool autoFocus;
 
-  /// 是否允许为空,默认true
+  /// Whether allow empty, default true
   final bool allowEmpty;
 
   const LabelInputFormField(
@@ -58,7 +59,9 @@ class LabelInputFormField extends StatelessWidget {
                 textAlign: TextAlign.right,
                 maxLines: 1,
                 decoration: InputDecoration(
-                  hintText: enabled ? '请输入' : '暂无',
+          hintText: enabled
+            ? AppLocalizations.of(context).pleaseEnter
+            : AppLocalizations.of(context).none,
                   hintStyle: AppTextStyle.formLightGrayText,
                   disabledBorder: InputBorder.none,
                   enabledBorder: const UnderlineInputBorder(
@@ -71,8 +74,8 @@ class LabelInputFormField extends StatelessWidget {
                 ),
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(RegExp(
-                      "[\\a-\\z\\A-\\Z0-9\\u4E00-\\u9FA5\\.\\,\\?\\<\\>\\。\\，\\-\\——\\=\\;\\！\\!\\+]")), //只能输入汉字或者字母或数字
-                  LengthLimitingTextInputFormatter(50), //最大长度
+                      "[\\a-\\z\\A-\\Z0-9\\u4E00-\\u9FA5\\.\\,\\?\\<\\>\\。\\，\\-\\——\\=\\;\\！\\!\\+]")), // Allow Chinese characters, letters, numbers and common punctuations
+                  LengthLimitingTextInputFormatter(50), // Max length
                 ],
                 initialValue: initialValue ?? '',
                 // controller: controller,

@@ -1,6 +1,7 @@
 import 'package:castor_flutter/ui/form/photo/image_preview.dart';
 import 'package:castor_flutter/ui/utils/file.dart';
 import 'package:castor_flutter/ui/widgets/toast.dart';
+import 'package:castor_flutter/l10n/l10n.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
@@ -31,7 +32,7 @@ class _MultiImagesState extends State<MultiImages> {
   List<AssetEntity> picked = [];
   final imagePicker = ImagePicker();
 
-  // 相机拍照
+  // Take photo from camera
   Future _getCamera() async {
     Navigator.of(context).pop();
     final XFile? pickedFile =
@@ -51,13 +52,13 @@ class _MultiImagesState extends State<MultiImages> {
         });
       } else {
         if (mounted) {
-          toastWarning(context, "无效的图片格式!");
+          toastWarning(context, AppLocalizations.of(context).invalidImageFormat);
         }
       }
     }
   }
 
-  // 选取图片，多选
+  // Pick multiple images from gallery
   Future _getImages() async {
     Navigator.of(context).pop();
     final List<XFile> pickedFiles = await imagePicker.pickMultiImage(limit: 5);
@@ -80,7 +81,8 @@ class _MultiImagesState extends State<MultiImages> {
 
     if (invalidImageUrls.isNotEmpty) {
       if (mounted) {
-        toastWarning(context, "${invalidImageUrls.length}张图片格式不支持,已跳过");
+        toastWarning(context, AppLocalizations.of(context)
+            .unsupportedImagesSkipped(invalidImageUrls.length));
       }
     }
 
@@ -93,7 +95,7 @@ class _MultiImagesState extends State<MultiImages> {
   }
 
   Future _getActionSheet() async {
-    // 点击时让当前焦点所在的文本框失焦，隐藏键盘
+  // Unfocus current text field to hide keyboard
     FocusScope.of(context).requestFocus(FocusNode());
     await showModalBottomSheet(
         context: context,
@@ -105,13 +107,13 @@ class _MultiImagesState extends State<MultiImages> {
                     onTap: _getCamera,
                     child: ListTile(
                       leading: Icon(Icons.photo_camera),
-                      title: Text("拍照"),
+                      title: Text(AppLocalizations.of(context).camera),
                     )),
                 InkWell(
                     onTap: _getImages,
                     child: ListTile(
                       leading: Icon(Icons.photo),
-                      title: Text("相册"),
+                      title: Text(AppLocalizations.of(context).gallery),
                     )),
               ],
             ),
