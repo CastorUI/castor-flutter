@@ -30,3 +30,6 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 build/
 castor-flutter-help/
+
+# Local Flutter Version Manager
+/.fvm/
