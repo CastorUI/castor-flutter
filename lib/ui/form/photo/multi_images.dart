@@ -61,7 +61,7 @@ class _MultiImagesState extends State<MultiImages> {
   // Pick multiple images from gallery
   Future _getImages() async {
     Navigator.of(context).pop();
-    final List<XFile> pickedFiles = await imagePicker.pickMultiImage(limit: 5);
+    final List<XFile> pickedFiles = await imagePicker.pickMultiImage();
     List<String> selectedImageUrls = [];
     List<String> invalidImageUrls = [];
     if (pickedFiles.isNotEmpty) {

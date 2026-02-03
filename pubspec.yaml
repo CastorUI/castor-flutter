@@ -7,25 +7,34 @@ dart3: true
 
 environment:
   sdk: ^3.6.2
-  flutter: ">=1.17.0"
+  flutter: '>=1.17.0'
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: ">=0.19.0 <0.21.0"
+  intl: '>=0.19.0 <0.21.0'
   dio: ^5.7.0
+  toastification: ^1.0.0
   photo_manager: ^3.6.4
   photo_view: ^0.15.0
-  flutter_image_compress: ^2.4.0
+  # 平台插件
   image_picker: ^1.1.2
-  toastification: ^1.0.0
+  flutter_image_compress: ^2.4.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+
+# HarmonyOS 6 依赖覆盖配置
+dependency_overrides:
+  # 系统选择器：调用鸿蒙原生选择器和相机
+  image_picker:
+    git:
+      url: https://gitee.com/openharmony-sig/flutter_packages.git
+      path: packages/image_picker/image_picker
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

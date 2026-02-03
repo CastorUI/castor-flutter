@@ -12,7 +12,6 @@ dependencies:
   castor_flutter:
     path: ../
   dio: ^5.7.0
-  image_picker: ^1.1.2
   flutter_localizations:
     sdk: flutter
   intl: any # Use the pinned version from flutter_localizations
