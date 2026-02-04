@@ -1,6 +1,7 @@
 {
   "scripts": {
     "listFiles": "flutter pub publish --dry-run",
+    "outdated": "dart pub outdated --no-dev-dependencies --up-to-date --no-dependency-overrides",
     "publish": "flutter pub publish --server https://pub.dartlang.org -v"
   }
 }
