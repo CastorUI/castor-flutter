@@ -1,5 +1,11 @@
 # castor_flutter changelog
 
+## 1.0.4
+
+- Added: Comprehensive example documentation for all form components
+- Updated: Upgraded dependency package versions for improved stability and performance
+- Changed: Downgraded test framework to ensure compatibility with current CI/CD pipeline
+
 ## 1.0.3
 - Added: HarmonyOS platform support (example & documentation)
 
