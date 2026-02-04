@@ -5,12 +5,9 @@ import 'package:toastification/toastification.dart';
 ToastificationItem toastInfo(BuildContext context, String msg) {
   return toastification.show(
     context: context, // optional if you use ToastificationWrapper
-    title: Text(
-      msg,
-      softWrap: true,
-    ),
+    title: Text(msg),
     type: ToastificationType.info,
-    style: ToastificationStyle.simple,
+    style: ToastificationStyle.flat,
     alignment: Alignment.center,
     backgroundColor: Colors.black,
     foregroundColor: Colors.white,
@@ -22,10 +19,7 @@ ToastificationItem toastInfo(BuildContext context, String msg) {
 ToastificationItem toastWarning(BuildContext context, String msg) {
   return toastification.show(
     context: context, // optional if you use ToastificationWrapper
-    title: Text(
-      msg,
-      softWrap: true,
-    ),
+    title: Text(msg),
     type: ToastificationType.warning,
     style: ToastificationStyle.flat,
     alignment: Alignment.center,
