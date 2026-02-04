@@ -1,20 +1,20 @@
 # castor_flutter changelog
 
 ## 1.0.3
-- 新增：兼容HarmonyOS平台（示例&文档）
+- Added: HarmonyOS platform support (example & documentation)
 
 ## 1.0.2
 
-- 新增：支持国际化（i18n），内置英文（en）与中文（zh）本地化资源与文案。
-- 修复：在 `pubspec.yaml` 中添加 `intl` 依赖，确保生成的本地化代码（如 `DateFormat`）可用。
+- Added: Internationalization (i18n) support with built-in English (en) and Chinese (zh) localization resources and copy.
+- Fixed: Added `intl` dependency in `pubspec.yaml` to ensure generated localization code (e.g., `DateFormat`) is available.
 
 ## 1.0.1
 
-### 新增常用表单组件
+### New Common Form Components
 
-1. 单行输入框
-2. 多行输入框
-3. 下拉框
-4. 开关
-5. 单张图片
-6. 图片列表
+1. Single-line input field
+2. Multi-line input field
+3. Dropdown
+4. Toggle switch
+5. Single image
+6. Image list
