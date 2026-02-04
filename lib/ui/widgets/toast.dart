@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:toastification/toastification.dart';
 
 // Info toast
-toastInfo(BuildContext context, String msg) {
+ToastificationItem toastInfo(BuildContext context, String msg) {
   return toastification.show(
     context: context, // optional if you use ToastificationWrapper
     title: Text(
@@ -19,7 +19,7 @@ toastInfo(BuildContext context, String msg) {
 }
 
 // Warning toast
-toastWarning(BuildContext context, String msg) {
+ToastificationItem toastWarning(BuildContext context, String msg) {
   return toastification.show(
     context: context, // optional if you use ToastificationWrapper
     title: Text(
