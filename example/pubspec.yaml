@@ -3,8 +3,8 @@ publish_to: 'none'
 description: Example app for castor_flutter package
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.0.0"
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.0.0'
 
 dependencies:
   flutter:
@@ -20,6 +20,15 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
+
+# HarmonyOS 6 依赖覆盖配置
+dependency_overrides:
+  # 系统选择器：调用鸿蒙原生选择器和相机
+  image_picker:
+    git:
+      url: https://gitee.com/openharmony-sig/flutter_packages.git
+      path: packages/image_picker/image_picker
+      ref: master
 
 flutter:
   uses-material-design: true

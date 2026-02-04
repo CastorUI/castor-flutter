@@ -30,14 +30,6 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^5.0.0
 
-# HarmonyOS 6 依赖覆盖配置
-dependency_overrides:
-  # 系统选择器：调用鸿蒙原生选择器和相机
-  image_picker:
-    git:
-      url: https://gitee.com/openharmony-sig/flutter_packages.git
-      path: packages/image_picker/image_picker
-
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

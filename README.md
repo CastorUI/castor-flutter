@@ -101,6 +101,21 @@ LabelMultiImagesFormField(
 final result = Calculator().addOne(2);
 ```
 
+## HarmonyOS Support
+
+This plugin supports HarmonyOS. When running in a HarmonyOS environment, add the following dependency overrides to your App project's `pubspec.yaml`:
+
+```yaml
+# HarmonyOS 6 dependency overrides
+dependency_overrides:
+  # System picker: calls HarmonyOS native picker and camera
+  image_picker:
+    git:
+      url: https://gitee.com/openharmony-sig/flutter_packages.git
+      path: packages/image_picker/image_picker
+      ref: master
+```
+
 ## Internationalization (i18n)
 
 This library supports Chinese and English via Flutter's gen_l10n (intl/ARB) workflow.
