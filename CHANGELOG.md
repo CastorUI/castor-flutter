@@ -1,5 +1,8 @@
 # castor_flutter changelog
 
+## 1.0.3
+- 新增：兼容HarmonyOS平台（示例&文档）
+
 ## 1.0.2
 
 - 新增：支持国际化（i18n），内置英文（en）与中文（zh）本地化资源与文案。
