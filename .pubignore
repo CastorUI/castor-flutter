@@ -2,7 +2,10 @@
 /test/
 
 # 忽略示例代码（如果不需要发布）
-/example/
+/example/*
+!/example/lib/
+!/example/README.md
+!/example/pubspec.yaml
 
 # 忽略示例文档
 /castor-flutter-help/
