@@ -74,7 +74,7 @@ class LabelInputFormField extends StatelessWidget {
                 ),
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(RegExp(
-                      "[\\a-\\z\\A-\\Z0-9\\u4E00-\\u9FA5\\.\\,\\?\\<\\>\\。\\，\\-\\——\\=\\;\\！\\!\\+]")), // Allow Chinese characters, letters, numbers and common punctuations
+                      "[\\a-\\z\\A-\\Z0-9\\u4E00-\\u9FA5\\.\\,\\?\\<\\>\\。\\，\\-\\——\\=\\;\\！\\!\\+\\@]")), // Allow Chinese characters, letters, numbers and common punctuations
                   LengthLimitingTextInputFormatter(50), // Max length
                 ],
                 initialValue: initialValue ?? '',

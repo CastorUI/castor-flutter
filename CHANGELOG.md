@@ -1,5 +1,10 @@
 # castor_flutter changelog
 
+## 1.0.5
+
+- Updated: Optimized text input character handling for improved user experience
+- Updated: Upgraded dependency package versions for stability and performance enhancements
+
 ## 1.0.4
 
 - Added: Comprehensive example documentation for all form components
