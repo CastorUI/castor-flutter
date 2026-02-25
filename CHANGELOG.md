@@ -1,5 +1,10 @@
 # castor_flutter changelog
 
+## 1.0.6
+
+- Simplified: Toast API - removed context parameter requirement
+- Updated: Example code references to use new Toast API
+
 ## 1.0.5
 
 - Updated: Optimized text input character handling for improved user experience

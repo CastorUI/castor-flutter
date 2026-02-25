@@ -1,9 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:toastification/toastification.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:castor_flutter/l10n/l10n.dart';
+
 import 'pages/ui/ui_index_page.dart';
 import 'pages/core/core_index_page.dart';
-import 'package:castor_flutter/l10n/l10n.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'pages/settings/language_page.dart';
 import 'widgets/web_wrapper.dart';
 
@@ -30,39 +32,40 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'castor_flutter Example',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          // 统一页面切换效果：采用垂直向上滑入（上下切换）
-          pageTransitionsTheme: const PageTransitionsTheme(
-            builders: <TargetPlatform, PageTransitionsBuilder>{
-              TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
-              TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
-              TargetPlatform.linux: FadeUpwardsPageTransitionsBuilder(),
-              TargetPlatform.macOS: FadeUpwardsPageTransitionsBuilder(),
-              TargetPlatform.windows: FadeUpwardsPageTransitionsBuilder(),
-            },
-          ),
-        ),
-        locale: _locale,
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: AppLocalizations.supportedLocales,
-        home: kIsWeb
-            ? WebWrapper(
-                child: ExampleHomePage(
-                onLocaleChange: _setLocale,
-                currentLocale: _locale,
-              ))
-            : ExampleHomePage(
-                onLocaleChange: _setLocale,
-                currentLocale: _locale,
-              ));
+    return ToastificationWrapper(
+        child: MaterialApp(
+            title: 'castor_flutter Example',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+              // 统一页面切换效果：采用垂直向上滑入（上下切换）
+              pageTransitionsTheme: const PageTransitionsTheme(
+                builders: <TargetPlatform, PageTransitionsBuilder>{
+                  TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+                  TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+                  TargetPlatform.linux: FadeUpwardsPageTransitionsBuilder(),
+                  TargetPlatform.macOS: FadeUpwardsPageTransitionsBuilder(),
+                  TargetPlatform.windows: FadeUpwardsPageTransitionsBuilder(),
+                },
+              ),
+            ),
+            locale: _locale,
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: AppLocalizations.supportedLocales,
+            home: kIsWeb
+                ? WebWrapper(
+                    child: ExampleHomePage(
+                    onLocaleChange: _setLocale,
+                    currentLocale: _locale,
+                  ))
+                : ExampleHomePage(
+                    onLocaleChange: _setLocale,
+                    currentLocale: _locale,
+                  )));
   }
 }
 

@@ -23,7 +23,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.0.3"
+    version: "1.0.5"
   characters:
     dependency: transitive
     description:
@@ -492,13 +492,13 @@ packages:
     source: hosted
     version: "0.7.3"
   toastification:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: toastification
-      sha256: "1e01495fe00b8fddce8a7f1da5e4775cd003763698e8363d7122bea4168a395e"
+      sha256: "69db2bff425b484007409650d8bcd5ed1ce2e9666293ece74dcd917dacf23112"
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.2.1"
+    version: "3.0.3"
   typed_data:
     dependency: transitive
     description:

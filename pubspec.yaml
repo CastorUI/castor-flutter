@@ -1,6 +1,6 @@
 name: castor_flutter
 description: This Flutter package is a collection of widgets and utilities for building Flutter applications.
-version: 1.0.5
+version: 1.0.6
 repository: https://github.com/castorui/castor-flutter
 homepage: https://castorui.github.io/castor-flutter-help/
 dart3: true

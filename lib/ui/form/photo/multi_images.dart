@@ -52,7 +52,7 @@ class _MultiImagesState extends State<MultiImages> {
         });
       } else {
         if (mounted) {
-          toastWarning(context, AppLocalizations.of(context).invalidImageFormat);
+          toastWarning(AppLocalizations.of(context).invalidImageFormat);
         }
       }
     }
@@ -81,7 +81,7 @@ class _MultiImagesState extends State<MultiImages> {
 
     if (invalidImageUrls.isNotEmpty) {
       if (mounted) {
-        toastWarning(context, AppLocalizations.of(context)
+        toastWarning(AppLocalizations.of(context)
             .unsupportedImagesSkipped(invalidImageUrls.length));
       }
     }
@@ -95,7 +95,7 @@ class _MultiImagesState extends State<MultiImages> {
   }
 
   Future _getActionSheet() async {
-  // Unfocus current text field to hide keyboard
+    // Unfocus current text field to hide keyboard
     FocusScope.of(context).requestFocus(FocusNode());
     await showModalBottomSheet(
         context: context,

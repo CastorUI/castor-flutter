@@ -63,7 +63,7 @@ class _SingleImageState extends State<SingleImage> {
         }
       } else {
         if (mounted) {
-          toastWarning(context, AppLocalizations.of(context).invalidImageFormat);
+          toastWarning(AppLocalizations.of(context).invalidImageFormat);
         }
       }
     }
@@ -86,7 +86,7 @@ class _SingleImageState extends State<SingleImage> {
   }
 
   Future _getActionSheet() async {
-  // Unfocus current text field to hide keyboard
+    // Unfocus current text field to hide keyboard
     FocusScope.of(context).requestFocus(FocusNode());
     await showModalBottomSheet(
         context: context,

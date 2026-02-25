@@ -12,6 +12,7 @@ dependencies:
   castor_flutter:
     path: ../
   dio: ^5.9.1
+  toastification: ^3.0.3
   flutter_localizations:
     sdk: flutter
   intl: any # Use the pinned version from flutter_localizations
